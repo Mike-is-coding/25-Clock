@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 import padWithLeadingZeros from "./AddZeros";
 import PropTypes from "prop-types";
-import {interval} from "./App";
 
 Controls.propTypes = {
     timer: PropTypes.number,
@@ -12,31 +11,38 @@ Controls.propTypes = {
     setMinutes: PropTypes.func,
     setSeconds: PropTypes.func
 }
+let interval;
 
-
-function Controls({timer, setTimer, minutes, setMinutes, seconds, setSeconds}) {
-    const runTime = () => {
-      let i = minutes;
+function Controls({minutes, setMinutes}) {
   
-      const interval = setInterval(function () {
-        if (i === 0) clearInterval(this);
+  
+  const runTime = () => {
+    console.log(interval);
+    if (!interval) {
+      interval = setInterval(function () {
+        if (minutes === 0) clearInterval(interval);
         else {
-          i -= 1;
-          React.useEffect(() => {
-            setMinutes(padWithLeadingZeros(i, 2));
-          }, [timer])
-          console.log("Currently at " + i);
+          minutes -= 1;
+          setMinutes(padWithLeadingZeros(minutes, 2));
+          console.log("Currently at " + minutes);
         }
       }, 1000);
-    };
-  
-    return (
-      <span className="controls">
-        <i className="fa fa-play" onClick={runTime}></i>
-        <i className="fa fa-pause" onClick={clearInterval}></i>
-        <i className="fa fa-undo"></i>
-      </span>
-    );
-  }
+    } else {
+      clearInterval(interval);
+      interval = undefined;
+    }
+  };
+
+  return (
+    <span className="controls">
+      <i className="fa fa-play" onClick={runTime}></i>
+      <i className="fa fa-pause" onClick={() => {
+        clearInterval(interval);
+        interval = undefined;
+      }}></i>
+      <i className="fa fa-undo"></i>
+    </span>
+  );
+}
 
   export default Controls;
