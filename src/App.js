@@ -69,6 +69,9 @@ function App() {
             setSeconds={setSeconds}
             working={working}
             setWorking={setWorking}
+            breakTime={breakTime}
+            setBreakTime={setBreakTime}
+            setSessionTime={setSessionTime}
           />
         </div>
         <div className="credits">

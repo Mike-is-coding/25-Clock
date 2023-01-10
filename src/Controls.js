@@ -15,7 +15,7 @@ Controls.propTypes = {
 }
 let interval;
 
-function Controls({minutes, setMinutes, working, setWorking, seconds, setSeconds}) {
+function Controls({minutes, setMinutes, working, setWorking, seconds, setSeconds, setBreakTime, setSessionTime, setTimer}) {
   
   
   const runTime = () => {
@@ -47,12 +47,20 @@ function Controls({minutes, setMinutes, working, setWorking, seconds, setSeconds
 
   return (
     <span className="controls">
-      <i className="fa fa-play" id="start_stop" onClick={runTime}></i>
-      <i className="fa fa-pause" onClick={() => {
+      <i className="fa fa-play" id="start_stop" title="Play/Pause" onClick={runTime}></i>
+      <i className="fa fa-pause" title="Pause" onClick={() => {
         clearInterval(interval);
         interval = undefined;
       }}></i>
-      <i className="fa fa-undo"></i>
+      <i className="fa fa-undo" id="reset" title="Reset" onClick={() => {
+        clearInterval(interval);
+        interval = undefined;
+        setBreakTime(5);
+        setSessionTime(25);
+        setMinutes(padWithLeadingZeros(25, 2));
+        setSeconds(padWithLeadingZeros(0, 2));
+        setTimer(padWithLeadingZeros(minutes, 2) + ":" + seconds);
+      }}></i>
     </span>
   );
 }
