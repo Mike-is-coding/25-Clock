@@ -15,7 +15,12 @@ function App() {
   const [timer, setTimer] = useState(
     padWithLeadingZeros(minutes, 2) + ":" + seconds
   );
-  console.log(minutes);
+  React.useEffect(() => {
+    setTimer(
+    padWithLeadingZeros(minutes, 2) + ":" + seconds
+    );
+  }, [minutes, seconds])
+  // console.log(minutes);
 
   return (
     <div className="background">
