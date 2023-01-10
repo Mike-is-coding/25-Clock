@@ -10,6 +10,7 @@ import padWithLeadingZeros from './AddZeros';
 function App() {
   const [breakTime, setBreakTime] = useState(5);
   const [sessionTime, setSessionTime] = useState(25);
+  const [working, setWorking] = useState(true);
   const [minutes, setMinutes] = useState(padWithLeadingZeros(sessionTime, 2));
   const [seconds, setSeconds] = useState(padWithLeadingZeros(0, 2));
   const [timer, setTimer] = useState(
@@ -66,6 +67,8 @@ function App() {
             setMinutes={setMinutes}
             seconds={seconds}
             setSeconds={setSeconds}
+            working={working}
+            setWorking={setWorking}
           />
         </div>
         <div className="credits">

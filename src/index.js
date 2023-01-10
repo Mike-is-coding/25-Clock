@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <link href='https://www.1001fonts.com/css?family=montserrat-bold' rel='stylesheet' type='text/css' />
+    <link src='https://www.1001fonts.com/download/font/montserrat.bold.ttf' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <App />
   </React.StrictMode>
