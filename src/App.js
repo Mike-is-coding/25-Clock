@@ -22,7 +22,14 @@ function App() {
       padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
     );
   }, [minutes, seconds]);
-  // console.log(minutes);
+
+  React.useEffect(() => {
+    if (working) {
+      sessionLabel = "Working";
+    } else {
+      sessionLabel = "Break";
+    }
+  }, [working]);
 
   return (
     <div className="background">
