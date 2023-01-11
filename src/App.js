@@ -14,10 +14,10 @@ function App() {
   const [minutes, setMinutes] = useState(padWithLeadingZeros(sessionTime, 2));
   const [seconds, setSeconds] = useState(padWithLeadingZeros(0, 2));
   const [timer, setTimer] = useState(
-    padWithLeadingZeros(minutes, 2) + ":" + seconds
+    padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
   );
   React.useEffect(() => {
-    setTimer(padWithLeadingZeros(minutes, 2) + ":" + seconds);
+    setTimer(padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2));
   }, [minutes, seconds]);
   // console.log(minutes);
 

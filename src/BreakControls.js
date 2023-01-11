@@ -32,7 +32,7 @@ function BreakControls({ breakTime, setBreakTime }) {
           id="break-decrement"
           className="fa fa-arrow-down"
           onClick={handleDecrement}
-        ></i>{" "}
+        ></i>
         <span id="break-length">{breakTime} </span>
         <i
           id="break-increment"
