@@ -1,25 +1,24 @@
-import React from 'react';
-import {useState} from "react";
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import "./App.css";
 import BreakControls from "./BreakControls";
 import SessionControls from "./SessionControls";
 import Controls from "./Controls";
-import padWithLeadingZeros from './AddZeros';
+import padWithLeadingZeros from "./AddZeros";
 
 //Main App Component
 function App() {
   const [breakTime, setBreakTime] = useState(5);
   const [sessionTime, setSessionTime] = useState(25);
+  const [working, setWorking] = useState(true);
   const [minutes, setMinutes] = useState(padWithLeadingZeros(sessionTime, 2));
   const [seconds, setSeconds] = useState(padWithLeadingZeros(0, 2));
   const [timer, setTimer] = useState(
     padWithLeadingZeros(minutes, 2) + ":" + seconds
   );
   React.useEffect(() => {
-    setTimer(
-    padWithLeadingZeros(minutes, 2) + ":" + seconds
-    );
-  }, [minutes, seconds])
+    setTimer(padWithLeadingZeros(minutes, 2) + ":" + seconds);
+  }, [minutes, seconds]);
   // console.log(minutes);
 
   return (
@@ -53,9 +52,7 @@ function App() {
             <span id="timer-label">Current Session</span>
           </div>
           <div className="timer">
-            <span id="time-left">
-              {timer}
-            </span>
+            <span id="time-left">{timer}</span>
           </div>
         </div>
         <div className="controls-container">
@@ -66,6 +63,11 @@ function App() {
             setMinutes={setMinutes}
             seconds={seconds}
             setSeconds={setSeconds}
+            working={working}
+            setWorking={setWorking}
+            breakTime={breakTime}
+            setBreakTime={setBreakTime}
+            setSessionTime={setSessionTime}
           />
         </div>
         <div className="credits">

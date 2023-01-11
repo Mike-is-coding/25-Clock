@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.11"
   }
