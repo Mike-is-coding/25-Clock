@@ -16,8 +16,11 @@ function App() {
   const [timer, setTimer] = useState(
     padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
   );
+  let sessionLabel = "Working";
   React.useEffect(() => {
-    setTimer(padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2));
+    setTimer(
+      padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
+    );
   }, [minutes, seconds]);
   // console.log(minutes);
 
@@ -49,7 +52,8 @@ function App() {
         </div>
         <div className="timer-box">
           <div className="clock-label">
-            <span id="timer-label">Current Session</span>
+            <span>Current Session</span>
+            <span id="timer-label">{sessionLabel}</span>
           </div>
           <div className="timer">
             <span id="time-left">{timer}</span>

@@ -87,12 +87,18 @@ body {
 }
 
 .clock-label {
-  /*   background: green; */
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 80px;
   text-align: center;
   font-size: 2rem;
 }
+
+#timer-label {
+  font-size: 1.5rem;
+} 
 
 .timer {
   text-align: center;
