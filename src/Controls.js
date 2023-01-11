@@ -12,6 +12,10 @@ Controls.propTypes = {
   setSeconds: PropTypes.func,
   working: PropTypes.bool,
   setWorking: PropTypes.func,
+  setBreakTime: PropTypes.func,
+  breakTime: PropTypes.number,
+  setSessionTime: PropTypes.func,
+  sessionTime: PropTypes.number
 };
 let interval;
 
@@ -22,7 +26,9 @@ function Controls({
   setWorking,
   seconds,
   setSeconds,
+  breakTime,
   setBreakTime,
+  sessionTime,
   setSessionTime,
   setTimer,
 }) {
@@ -32,8 +38,23 @@ function Controls({
       interval = setInterval(function () {
         console.log(minutes + ":" + seconds, `\n${interval}`);
         if (minutes < 1 && seconds < 1) {
-          clearInterval(interval);
-          interval = undefined;
+          if (working) {
+            working = false;
+            setWorking(working);
+            seconds = 0;
+            minutes = breakTime;
+            setSeconds(padWithLeadingZeros(seconds, 2));
+            setMinutes(padWithLeadingZeros(minutes, 2));
+          } else if (!working) {
+            working = true;
+            setWorking(working);
+            seconds = 0;
+            minutes = sessionTime;
+            setSeconds(padWithLeadingZeros(seconds, 2));
+            setMinutes(padWithLeadingZeros(minutes, 2));
+          }
+          // clearInterval(interval);
+          // interval = undefined;
         } else if (seconds < 1) {
           seconds = 59;
           setSeconds(padWithLeadingZeros(seconds, 2));
@@ -44,7 +65,7 @@ function Controls({
           setSeconds(padWithLeadingZeros(seconds, 2));
           console.log("Currently at " + seconds + " seconds");
         }
-      }, 1000);
+      }, 250);
     } else {
       clearInterval(interval);
       interval = undefined;

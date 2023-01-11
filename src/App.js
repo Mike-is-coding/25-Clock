@@ -16,7 +16,7 @@ function App() {
   const [timer, setTimer] = useState(
     padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
   );
-  let sessionLabel = "Working";
+  const [sessionLabel, setSessionLabel]  = useState("Working");
   React.useEffect(() => {
     setTimer(
       padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
@@ -25,9 +25,9 @@ function App() {
 
   React.useEffect(() => {
     if (working) {
-      sessionLabel = "Working";
-    } else {
-      sessionLabel = "Break";
+      setSessionLabel("Working");
+    } else if (!working) {
+      setSessionLabel("Break");
     }
   }, [working]);
 
@@ -78,6 +78,7 @@ function App() {
             setWorking={setWorking}
             breakTime={breakTime}
             setBreakTime={setBreakTime}
+            sessionTime={sessionTime}
             setSessionTime={setSessionTime}
           />
         </div>
