@@ -65,7 +65,7 @@ function Controls({
           setSeconds(padWithLeadingZeros(seconds, 2));
           console.log("Currently at " + seconds + " seconds");
         }
-      }, 250);
+      }, 1000);
     } else {
       clearInterval(interval);
       interval = undefined;

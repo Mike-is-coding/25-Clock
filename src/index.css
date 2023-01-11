@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 :root {
   --background: rgb(160, 80, 80);
   --dark-background: rgb(130, 50, 50);
