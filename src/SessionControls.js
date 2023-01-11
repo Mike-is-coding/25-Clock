@@ -37,12 +37,7 @@ function SessionControls({ sessionTime, setSessionTime, setMinutes }) {
           className="fa fa-arrow-down"
           onClick={handleDecrement}
         ></i>
-        <span
-          id="
-            session-length"
-        >
-          {sessionTime}{" "}
-        </span>
+        <span id="session-length">{sessionTime}</span>
         <i
           id="session-increment"
           className="fa fa-arrow-up"
