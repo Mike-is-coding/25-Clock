@@ -15,7 +15,7 @@ Controls.propTypes = {
   setBreakTime: PropTypes.func,
   breakTime: PropTypes.number,
   setSessionTime: PropTypes.func,
-  sessionTime: PropTypes.number
+  sessionTime: PropTypes.number,
 };
 let interval;
 
@@ -33,6 +33,8 @@ function Controls({
   setTimer,
 }) {
   const runTime = () => {
+    let alarm = document.getElementById("beep");
+    alarm.volume = 0.2;
     console.log(interval);
     if (!interval) {
       interval = setInterval(function () {
@@ -45,6 +47,7 @@ function Controls({
             minutes = breakTime;
             setSeconds(padWithLeadingZeros(seconds, 2));
             setMinutes(padWithLeadingZeros(minutes, 2));
+            alarm.play();
           } else if (!working) {
             working = true;
             setWorking(working);
@@ -52,6 +55,7 @@ function Controls({
             minutes = sessionTime;
             setSeconds(padWithLeadingZeros(seconds, 2));
             setMinutes(padWithLeadingZeros(minutes, 2));
+            alarm.play();
           }
           // clearInterval(interval);
           // interval = undefined;
@@ -101,8 +105,17 @@ function Controls({
           setMinutes(padWithLeadingZeros(25, 2));
           setSeconds(padWithLeadingZeros(0, 2));
           setTimer(padWithLeadingZeros(minutes, 2) + ":" + seconds);
+          alarm.pause();
+          alarm.currentTime = 0;
         }}
-      ></i>
+      >
+        <audio id="beep" volume="0.5">
+          <source
+            src="https://drive.google.com/uc?export=download&id=1ptHq2899D1z1JjZ-QHhY9shVlqouMMk1"
+            type="audio/mpeg"
+          />
+        </audio>
+      </i>
     </span>
   );
 }
