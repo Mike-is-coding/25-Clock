@@ -1,10 +1,10 @@
-import React from 'react';
-import {useState} from "react";
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import "./App.css";
 import BreakControls from "./BreakControls";
 import SessionControls from "./SessionControls";
 import Controls from "./Controls";
-import padWithLeadingZeros from './AddZeros';
+import padWithLeadingZeros from "./AddZeros";
 
 //Main App Component
 function App() {
@@ -17,10 +17,8 @@ function App() {
     padWithLeadingZeros(minutes, 2) + ":" + seconds
   );
   React.useEffect(() => {
-    setTimer(
-    padWithLeadingZeros(minutes, 2) + ":" + seconds
-    );
-  }, [minutes, seconds])
+    setTimer(padWithLeadingZeros(minutes, 2) + ":" + seconds);
+  }, [minutes, seconds]);
   // console.log(minutes);
 
   return (
@@ -54,9 +52,7 @@ function App() {
             <span id="timer-label">Current Session</span>
           </div>
           <div className="timer">
-            <span id="time-left">
-              {timer}
-            </span>
+            <span id="time-left">{timer}</span>
           </div>
         </div>
         <div className="controls-container">
