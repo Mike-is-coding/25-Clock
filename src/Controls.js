@@ -95,6 +95,7 @@ function Controls({
         onClick={() => {
           clearInterval(interval);
           interval = undefined;
+          setWorking(true);
           setBreakTime(5);
           setSessionTime(25);
           setMinutes(padWithLeadingZeros(25, 2));
