@@ -100,6 +100,8 @@ function Controls({
         id="reset"
         title="Reset"
         onClick={() => {
+          let alarm = document.getElementById("beep");
+          alarm.volume = 0.2;
           clearInterval(interval);
           interval = undefined;
           setWorking(true);
