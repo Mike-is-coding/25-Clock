@@ -1,3 +1,9 @@
+/*
+This component handles work session controls including: increment, decrement, 
+and work length.
+*/
+
+
 import React from "react";
 import PropTypes from "prop-types";
 import padWithLeadingZeros from "./AddZeros";

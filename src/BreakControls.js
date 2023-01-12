@@ -1,3 +1,9 @@
+/*
+This component handles break session controls including: increment, decrement, 
+and break length.
+*/
+
+
 import React from "react";
 import PropTypes from "prop-types";
 import "./App.css";

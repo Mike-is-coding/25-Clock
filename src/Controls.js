@@ -1,3 +1,9 @@
+/*
+This component handles all timing functions including: timer 
+decrement, timer controls, and alarm sound on time end.
+*/
+
+
 import React from "react";
 import "./App.css";
 import padWithLeadingZeros from "./AddZeros";
@@ -35,10 +41,9 @@ function Controls({
   const runTime = () => {
     let alarm = document.getElementById("beep");
     alarm.volume = 0.2;
-    console.log(interval);
+    // console.log(interval);
     if (!interval) {
       interval = setInterval(function () {
-        console.log(minutes + ":" + seconds, `\n${interval}`);
         if (minutes < 1 && seconds < 1) {
           if (working) {
             working = false;
@@ -57,17 +62,15 @@ function Controls({
             setMinutes(padWithLeadingZeros(minutes, 2));
             alarm.play();
           }
-          // clearInterval(interval);
-          // interval = undefined;
         } else if (seconds < 1) {
           seconds = 59;
           setSeconds(padWithLeadingZeros(seconds, 2));
           setMinutes(padWithLeadingZeros((minutes -= 1), 2));
-          console.log("Currently at " + minutes + " minutes");
+          // console.log("Currently at " + minutes + " minutes");
         } else {
           seconds -= 1;
           setSeconds(padWithLeadingZeros(seconds, 2));
-          console.log("Currently at " + seconds + " seconds");
+          // console.log("Currently at " + seconds + " seconds");
         }
       }, 1000);
     } else {
@@ -109,6 +112,9 @@ function Controls({
           alarm.currentTime = 0;
         }}
       >
+
+      {/* Used 'uc?export=download&id=' in google drive link to direct 
+      code to download immediately */}
         <audio id="beep" volume="0.5">
           <source
             src="https://drive.google.com/uc?export=download&id=1ptHq2899D1z1JjZ-QHhY9shVlqouMMk1"

@@ -1,3 +1,14 @@
+/*
+This is the main app component that will render all 
+components to the page.
+
+Debugging:
+--------------------------------------------------------------------------
+For debugging uncomment console logging.
+*/
+
+
+
 import React from "react";
 import { useState } from "react";
 import "./App.css";
@@ -16,7 +27,9 @@ function App() {
   const [timer, setTimer] = useState(
     padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
   );
-  const [sessionLabel, setSessionLabel]  = useState("Working");
+  const [sessionLabel, setSessionLabel] = useState("Working");
+
+  // Used useEffect to immediately update timer view to reflect minutes and seconds changes.
   React.useEffect(() => {
     setTimer(
       padWithLeadingZeros(minutes, 2) + ":" + padWithLeadingZeros(seconds, 2)
