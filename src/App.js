@@ -20,7 +20,10 @@ import Particles from "particlesjs";
 
 window.onload = function() {
   Particles.init({
-    selector: '.particles'
+    selector: '.particles',
+    sizeVariations: '6',
+    minDistance: '120',
+    connectParticles: 'true'
   });
 }
 
