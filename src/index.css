@@ -13,7 +13,7 @@ code {
 }
 
 :root {
-  --background: rgb(160, 80, 80);
+  --background: rgb(200, 100, 100);
   --dark-background: rgb(130, 50, 50);
   --white: #e3dac9;
   --blue: rgb(57, 57, 170);
@@ -24,7 +24,6 @@ body {
 }
 
 .background {
-  background-color: var(--background);
   /* background: radial-gradient(circle at center, rgba(0,0,0,1) 12%, rgba(61,20,16,1) 67%, rgba(160,80,80,1) 100%); */
   display: flex;
   position: relative;
@@ -35,7 +34,7 @@ body {
 }
 
 .particles {
-  background-color: white;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(78,39,39,1) 38%, rgba(160,80,80,1) 100%);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -45,14 +44,13 @@ body {
 }
 
 .container {
+  border-radius: 10%;
   display: block;
   position: absolute;
   font-family: montserrat-bold;
   height: 700px;
   width: 500px;
   justify-content: center;
-  top: 20px;
-  left: 20px;
   z-index: 1;
   color: var(--white);
 }
@@ -92,7 +90,7 @@ body {
 
 .timer-box {
   display: block;
-  border: solid 10px var(--dark-background);
+  border: solid 10px var(--background);
   width: 350px;
   height: 250px;
   position: absolute;
@@ -159,9 +157,12 @@ body {
   text-decoration: none;
 }
 
-.fa {
+.fa::before {
+  color: transparent;
   font-size: 2rem;
-  color: var(--dark-background);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(78,39,39,1) 12%, var(--dark-background) 100%);
 }
 
 .fa:hover {
