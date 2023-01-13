@@ -23,7 +23,8 @@ window.onload = function() {
     selector: '.particles',
     sizeVariations: '6',
     minDistance: '120',
-    connectParticles: 'true'
+    connectParticles: 'true',
+    color: '#000000'
   });
 }
 
