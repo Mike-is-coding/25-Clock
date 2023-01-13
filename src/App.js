@@ -16,6 +16,13 @@ import BreakControls from "./BreakControls";
 import SessionControls from "./SessionControls";
 import Controls from "./Controls";
 import padWithLeadingZeros from "./AddZeros";
+import Particles from "particlesjs";
+
+window.onload = function() {
+  Particles.init({
+    selector: '.background'
+  });
+}
 
 //Main App Component
 function App() {
@@ -46,6 +53,7 @@ function App() {
 
   return (
     <div className="background">
+      <canvas className="particles"></canvas>
       <div className="container">
         <div className="title">
           <h1>25 + 5 Clock</h1>
