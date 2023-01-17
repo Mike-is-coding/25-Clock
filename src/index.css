@@ -24,7 +24,6 @@ body {
 }
 
 .background {
-  /* background: radial-gradient(circle at center, rgba(0,0,0,1) 12%, rgba(61,20,16,1) 67%, rgba(160,80,80,1) 100%); */
   display: flex;
   position: relative;
   width: 100vw;
