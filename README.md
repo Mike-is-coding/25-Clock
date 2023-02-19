@@ -1,11 +1,55 @@
-# Simple 25 + 5 Clock
+# Pomodoro Clock
 
-> This is a simple React app that counts down from the set amount of work time. When the work time is up the break time starts and so forth until it is stopped or reset.
+## Table of contents
 
-1. You can set the work time under **Session Length** up to a maximum of 60 minutes.
-2. Likewise, the break time can be set under **Break Length** up to 60 minutes.
-3. You can use the controls at the bottom of the page to control the timer with play/pause, and reset.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-For the live version click [here](https://mike-is-coding.github.io/25-Clock/).
+## Overview
 
-![Pomodoro Clock](https://i.imgur.com/YGLtHbn.png "Pomodoro Clock")
+### The challenge
+
+Users should be able to:
+
+- Set session length
+- Set break length
+- Timer counts down in seconds
+- Session controls can play, pause, and reset the timer
+- When the session ends an alarm will sound to indicate session change
+
+### Screenshot
+
+!["Calculator preview"](./public/Pomodoro-Clock.png)
+
+### Links
+
+- Live Site URL: [Live Site](https://www.miguelfierro.dev/25-Clock/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Javascript
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+
+### What I learned
+
+This was one of my first projects in React and I learned a lot using the React framework. This project really solidified my understanding of the React framework and I became very comfortable using it.
+
+### Continued development
+
+For future projects I would very much like to continue working with React and further improve my skills in web development.
+
+## Author
+
+Author: [Miguel Fierro](https://www.miguelfierro.dev/).
