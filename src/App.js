@@ -1,14 +1,3 @@
-/*
-This is the main app component that will render all 
-components to the page.
-
-Debugging:
---------------------------------------------------------------------------
-For debugging uncomment console logging.
-*/
-
-
-
 import React from "react";
 import { useState } from "react";
 import "./App.css";
